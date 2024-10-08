@@ -8,7 +8,7 @@ public class Account {
     public static final int CHECKING = 0;
     public static final int SAVINGS = 1;
     public static final int MAXI_SAVINGS = 2;
-    public static final int SUPER_SAVINGS = 3;
+    public static final int SUPER_SAVINGS = 3; //New type added
 
     private final int accountType;
     public List<Transaction> transactions;
