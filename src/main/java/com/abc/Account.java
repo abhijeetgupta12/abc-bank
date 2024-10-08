@@ -72,7 +72,29 @@ public void withdraw(double amount) {
             amount += t.amount;
         return amount;
     }
+    
+    
+    public void transfer(Account toAccount,double amount) { //added new method to transfer
+    	
+    	if(amount <= 0) {
+    		throw new IllegalArgumentException("Amount to transefer should be more than 0");
+    	}
+    	
+    	if(this.sumTransactions()<0) {
+    		throw new IllegalArgumentException("Insufficient balance");
+    	}
+    	
+    	if(toAccount == null) {
+    		throw new IllegalArgumentException("Invalid account to transfer");
+    	}
+    	
+    	this.withdraw(amount);
+    	toAccount.deposit(amount);
+    	
+    }
 
+    
+    
     public int getAccountType() {
         return accountType;
     }
