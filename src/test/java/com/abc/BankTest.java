@@ -50,5 +50,29 @@ public class BankTest {
 
         assertEquals(170.0, bank.totalInterestPaid(), DOUBLE_DELTA);
     }
+    
+    @Test
+    public void testGetFirstCustomer() {
+    	
+    	Customer customer1 = new Customer("Abhijeet");
+    	Customer customer2 = new Customer("Rahul");
+    	
+    	Bank bank = new Bank();
+    	bank.addCustomer(customer1);
+    	bank.addCustomer(customer2);
+    	
+    	String firstCustomerName = bank.getFirstCustomer();
+    	assertEquals("Abhijeet",firstCustomerName);
+    	
+    }
+    
+    @Test
+    public void testGetFirstCustomerWithNoCustomer() {
+    	
+    	Bank bank = new Bank();
+    	String firstCustomerName = bank.getFirstCustomer();
+    	assertEquals("Error",firstCustomerName);
+    }
+    
 
 }
